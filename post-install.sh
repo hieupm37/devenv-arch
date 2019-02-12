@@ -66,6 +66,13 @@ sed -i 's/plugins=(git)/plugins=(git compleat sudo archlinux emacs autojump comm
 echo 'export EDITOR=emacsclient' >> ~/.zshrc
 echo 'export TERMINAL=lxterminal' >> ~/.zshrc
 
+# i3 config
+if [ ! -d ~/.i3 ]; then
+    mkdir ~/.i3
+fi
+echo 'exec xset s off' > ~/.i3/config  # Turn off screen saver feature
+echo 'exec xset -dpms >> ~/.i3/config  # Turn off power saving feature
+
 # i3status
 if [ ! -d ~/.config ]; then
     mkdir ~/.config
