@@ -57,7 +57,7 @@ echo 'vboxsf' > /etc/modules-load.d/vboxsf.conf
 
 # install dev envt.
 echo 'Installing dev environment'
-pacman -S --noconfirm git emacs zsh vim wget grep tmux i3
+pacman -S --noconfirm git emacs zsh vim wget grep tmux i3 autojump
 pacman -S --noconfirm curl openssh openssl sudo the_silver_searcher pkg-config
 pacman -S --noconfirm ttf-hack lxterminal nitrogen ntp dhclient keychain
 # pacman -S --noconfirm python-pip go go-tools pkg-config
