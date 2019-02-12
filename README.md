@@ -1,4 +1,4 @@
-# spartan-arch
+# devenv-arch
 
 This is a set of scripts designed to automate the creation of a minimal VM running Arch Linux and i3/Emacs as a Windows manager. This VM can be used as a file editor for the  host via folder sharing and as a development environment. Currently, the VM costs about 90MB of RAM to run.
 
@@ -11,7 +11,7 @@ This is a set of scripts designed to automate the creation of a minimal VM runni
 ## Installation
 Boot the VM on archlinux iso and then run the command
 ```shell
-wget https://goo.gl/ZPAMtT -O install.sh
+wget http://tinyurl.com/yxsgop3y -O install.sh
 bash install.sh [user] [password] [fast]
 ```
 All arguments are optional and will be prompted for if not passed on invocation:
