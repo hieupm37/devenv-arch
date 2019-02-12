@@ -18,27 +18,27 @@ echo 'exec nitrogen --restore &' >> ~/.xinitrc
 echo 'exec emacs' >> ~/.xinitrc
 
 # emacs config
-git clone https://github.com/abrochard/emacs-config.git
-echo '(load-file "~/emacs-config/bootstrap.el")' > ~/.emacs
+# git clone https://github.com/abrochard/emacs-config.git
+# echo '(load-file "~/emacs-config/bootstrap.el")' > ~/.emacs
 echo '(server-start)' >> ~/.emacs
 
 # cower & pacaur
-mkdir Downloads
-cd ~/Downloads
-wget https://aur.archlinux.org/cgit/aur.git/snapshot/cower-git.tar.gz
-tar -xvf cower-git.tar.gz
-cd cower-git
-makepkg PKGBUILD
-read -t 1 -n 1000000 discard      # discard previous input
-sudo pacman -U cower-*.pkg.tar.xz --noconfirm
+# mkdir Downloads
+# cd ~/Downloads
+# wget https://aur.archlinux.org/cgit/aur.git/snapshot/cower-git.tar.gz
+# tar -xvf cower-git.tar.gz
+# cd cower-git
+# makepkg PKGBUILD
+# read -t 1 -n 1000000 discard      # discard previous input
+# sudo pacman -U cower-*.pkg.tar.xz --noconfirm
 
-cd ~/Downloads
-wget https://aur.archlinux.org/cgit/aur.git/snapshot/pacaur.tar.gz
-tar -xvf pacaur.tar.gz
-cd pacaur
-makepkg PKGBUILD
-read -t 1 -n 1000000 discard      # discard previous input
-sudo pacman -U pacaur-*.pkg.tar.xz --noconfirm
+# cd ~/Downloads
+# wget https://aur.archlinux.org/cgit/aur.git/snapshot/pacaur.tar.gz
+# tar -xvf pacaur.tar.gz
+# cd pacaur
+# makepkg PKGBUILD
+# read -t 1 -n 1000000 discard      # discard previous input
+# sudo pacman -U pacaur-*.pkg.tar.xz --noconfirm
 
 # xterm setup
 echo 'XTerm*background:black' > ~/.Xdefaults
@@ -105,19 +105,19 @@ echo 'mode=0' >> bg-saved.cfg
 echo 'bgcolor=#000000' >> bg-saved.cfg
 
 # golang setup
-mkdir ~/go
-GOPATH=$HOME/go
-echo 'export GOPATH=$GOPATH' >> ~/.zshrc
-echo 'export PATH=$PATH:$HOME/go/bin' >> ~/.zshrc
-go get -u github.com/nsf/gocode
-go get -u github.com/rogpeppe/godef
-go get -u golang.org/x/tools/cmd/goimports
-go get -u github.com/jstemmer/gotags
+# mkdir ~/go
+# GOPATH=$HOME/go
+# echo 'export GOPATH=$GOPATH' >> ~/.zshrc
+# echo 'export PATH=$PATH:$HOME/go/bin' >> ~/.zshrc
+# go get -u github.com/nsf/gocode
+# go get -u github.com/rogpeppe/godef
+# go get -u golang.org/x/tools/cmd/goimports
+# go get -u github.com/jstemmer/gotags
 
 
 # temporary workaround
 cd
-wget https://raw.githubusercontent.com/abrochard/spartan-arch/master/startx.sh -O startx.sh
+wget https://raw.githubusercontent.com/hieupm37/devenv-arch/master/startx.sh -O startx.sh
 chmod +x startx.sh
 echo 'alias startx=~/startx.sh' >> ~/.zshrc
 
