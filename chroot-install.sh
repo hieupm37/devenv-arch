@@ -20,8 +20,8 @@ fi
 # setup timezone
 echo 'Setting up timezone'
 timedatectl set-ntp true
-ln -s /usr/share/zoneinfo/America/New_York /etc/localtime
-timedatectl set-timezone America/New_York
+ln -s /usr/share/zoneinfo/Asia/Ho_Chi_Minh /etc/localtime
+timedatectl set-timezone Asia/Ho_Chi_Minh
 hwclock --systohc
 
 # setup locale
@@ -32,7 +32,7 @@ echo 'LANG=en_US.UTF-8' > /etc/locale.conf
 
 # setup hostname
 echo 'Setting up hostname'
-echo 'arch-virtualbox' > /etc/hostname
+echo 'devenv-virtualbox' > /etc/hostname
 
 # build
 echo 'Building'
@@ -57,16 +57,16 @@ echo 'vboxsf' > /etc/modules-load.d/vboxsf.conf
 
 # install dev envt.
 echo 'Installing dev environment'
-pacman -S --noconfirm git emacs zsh nodejs npm vim wget perl make gcc grep tmux i3 dmenu
-pacman -S --noconfirm chromium curl autojump openssh sudo mlocate the_silver_searcher
+pacman -S --noconfirm git emacs zsh vim wget grep tmux i3
+pacman -S --noconfirm curl openssh openssl sudo the_silver_searcher pkg-config
 pacman -S --noconfirm ttf-hack lxterminal nitrogen ntp dhclient keychain
-pacman -S --noconfirm python-pip go go-tools pkg-config
-npm install -g jscs jshint bower grunt
-pip install pipenv bpython ipython
+# pacman -S --noconfirm python-pip go go-tools pkg-config
+# npm install -g jscs jshint bower grunt
+# pip install pipenv bpython ipython
 
 # install req for pacaur & cower
-echo 'Installing dependencies'
-pacman -S --noconfirm expac fakeroot yajl openssl
+# echo 'Installing dependencies'
+# pacman -S --noconfirm expac fakeroot yajl openssl
 
 # user mgmt
 echo 'Setting up user'
@@ -86,7 +86,7 @@ echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
 systemctl enable ntpdate.service
 
 # preparing post install
-wget https://raw.githubusercontent.com/abrochard/spartan-arch/master/post-install.sh -O /home/$user/post-install.sh
+wget https://raw.githubusercontent.com/hieupm37/devenv-arch/master/post-install.sh -O /home/$user/post-install.sh
 chown $user:$user /home/$user/post-install.sh
 
 echo 'Done'
